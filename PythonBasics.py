@@ -40,7 +40,20 @@ def fibonacci(n):
     while len(fib_sequence) < n:
         fib_sequence.append(fib_sequence[-1] + fib_sequence[-2])
     return fib_sequence
-#print(fibonacci(15))
+
+n = int(input("How many Fibonacci numbers do you want? : "))
+sequence = fibonacci(n)
+
+#with open("fibonacci.txt", "w") as file:
+#   file.write(str(sequence))
+#print("Saved Fibonnaci Sequence to fibonacci.txt")
+
+#Or the code below wich gives neat and clean readability
+
+with open("fibonacci.txt", "w") as f:
+    f.write(", ".join(map(str, sequence)))
+
+print("Saved Fibonacci sequence to fibonacci.txt")
 
 # Dictionary
 
@@ -49,7 +62,7 @@ d = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5}
 #print(d.values())
 #print(d.keys())
 #print(len(d))
-print(d["one"])
+#print(d["one"])
 
 
 
